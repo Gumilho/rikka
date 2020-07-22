@@ -1,3 +1,6 @@
 venv/
-settings.json
 .idea/
+cogs/__pycache__/
+
+settings.json
+test.py

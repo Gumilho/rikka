@@ -2,7 +2,7 @@ import json
 import discord
 from discord.ext import commands
 
-with open("settings.json", "r") as f:
+with open("jsons/settings.json", "r") as f:
     settings = json.load(f)
 
 
@@ -30,10 +30,10 @@ class Register(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        with open("public_projects.json", "r") as f:
+        with open("jsons/public_projects.json", "r") as f:
             self.public_projects = json.load(f)
 
-        with open("private_projects.json", "r") as f:
+        with open("jsons/private_projects.json", "r") as f:
             self.private_projects = json.load(f)
 
         await self.__update_public()
@@ -90,7 +90,7 @@ class Register(commands.Cog):
         public_message = await self.bot.get_channel(channel_id).send(embed=embed)
         await public_message.add_reaction(settings["emoji"]["viewer"])
         self.public_projects[public_message.id] = [short_title, embed.to_dict()]
-        with open("public_projects.json", "w") as f:
+        with open("json/public_projects.json", "w") as f:
             json.dump(self.public_projects, f, indent=4)
         await self.__update_public()
 
@@ -122,7 +122,7 @@ class Register(commands.Cog):
                 role = react_dict[str(reaction.emoji)]
                 team = [user.nick async for user in reaction.users() if user.name != "Rikka"]
                 self.private_projects[str(message.id)]["roles"][role] = team
-                with open("private_projects.json", "w") as f:
+                with open("jsons/private_projects.json", "w") as f:
                     json.dump(self.private_projects, f, indent=4)
             await self.__update_message(message)
 

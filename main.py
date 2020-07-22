@@ -1,10 +1,11 @@
 import os
+import pathlib
 import json
 from discord.ext import commands
 
-with open("settings.json", "r") as f:
+os.chdir(pathlib.Path(__file__).parent.absolute())
+with open("jsons/settings.json", "r") as f:
     settings = json.load(f)
-
 
 client = commands.Bot(command_prefix=settings["BOT_PREFIX"])
 
@@ -27,6 +28,5 @@ async def reload(ctx, extension):
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
-
 
 client.run(settings["TOKEN"])

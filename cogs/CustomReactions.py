@@ -2,7 +2,7 @@ import json
 import discord
 from discord.ext import commands
 
-with open("settings.json", "r") as f:
+with open("jsons/settings.json", "r") as f:
     settings = json.load(f)
 
 
@@ -25,14 +25,14 @@ class CustomReactions(commands.Cog):
         print("Loaded Images")
 
     def load_images(self):
-        with open("CRData.json", "r") as file:
+        with open("jsons/CRData.json", "r") as file:
             self.reactions = json.load(file)
 
     @commands.command()
     @is_admin()
     async def addemote(self, ctx, cmd, reaction):
         self.reactions[cmd] = reaction
-        with open("CRData.json", "w") as file:
+        with open("jsons/CRData.json", "w") as file:
             json.dump(self.reactions, file, indent=4)
         await ctx.message.delete(delay=1)
 
@@ -49,4 +49,3 @@ class CustomReactions(commands.Cog):
 
 def setup(client):
     client.add_cog(CustomReactions(client))
-
