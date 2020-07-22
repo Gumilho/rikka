@@ -1,0 +1,140 @@
+{
+    "733476730127253535": {
+        "name": "Kanna no nichijou",
+        "roles": {
+            "Cleaning": [
+                "Rin"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Rin"
+            ],
+            "Typesetting": [
+                "Rin"
+            ]
+        }
+    },
+    "733488373800501279": {
+        "name": "First Class Servant",
+        "roles": {
+            "Cleaning": [
+                "Manu"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Gumi"
+            ],
+            "Typesetting": [
+                "Daby"
+            ]
+        }
+    },
+    "733500490028941416": {
+        "name": "Sayonara",
+        "roles": {
+            "Cleaning": [
+                "Rin"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Carlos Marcos"
+            ],
+            "Typesetting": [
+                "Rin"
+            ]
+        }
+    },
+    "733501269926346835": {
+        "name": "Homura sensei",
+        "roles": {
+            "Cleaning": [
+                "Daby"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Carlos Marcos"
+            ],
+            "Typesetting": [
+                "Manu"
+            ]
+        }
+    },
+    "733502897119035426": {
+        "name": "Hourglass",
+        "roles": {
+            "Cleaning": [
+                "Manu"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Rin"
+            ],
+            "Typesetting": [
+                "Manu",
+                "Rin"
+            ]
+        }
+    },
+    "734548695454056551": {
+        "name": "Omotenashi Gohan",
+        "roles": {
+            "Cleaning": [
+                "Manu"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Carlos Marcos"
+            ],
+            "Typesetting": [
+                "Rin"
+            ]
+        }
+    },
+    "734561411258253333": {
+        "name": "Celebgram",
+        "roles": {
+            "Cleaning": [
+                "Rin"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Rin"
+            ],
+            "Typesetting": [
+                "Rin"
+            ]
+        }
+    },
+    "734618106680442921": {
+        "name": "The Abandoned Empress",
+        "roles": {
+            "Cleaning": [
+                "Manu",
+                "Rin"
+            ],
+            "Redraw": [
+                "Gumi"
+            ],
+            "Traducao": [
+                "Nana"
+            ],
+            "Typesetting": [
+                "Rin"
+            ]
+        }
+    }
+}
