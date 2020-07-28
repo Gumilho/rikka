@@ -174,5 +174,27 @@
             "color": 12806537,
             "type": "rich"
         }
+    ],
+    "737608014886076457": [
+        "Wild Robber",
+        {
+            "image": {
+                "url": "https://mangadex.org/images/manga/43109.jpg?1573785072"
+            },
+            "fields": [
+                {
+                    "inline": false,
+                    "name": "Wild Robber",
+                    "value": "Ji-ho perdeu a oportunidade de conseguir um quarto por um momento de preguiça. Então, um veterano o ajuda a conseguir um lugar perto da escola. No entanto, nem meio dia se passou desde que ele se mudou e foi atacado por um assaltante. Depois de acreditar que ele havia se livrado do agressor, ele o encontra no dia seguinte lendo os romances que ele costumava escrever em seus dias de escola. Na verdade, seu objetivo era conseguir os romances?! A coexistência sangrenta e agradável de duas pessoas começa!"
+                },
+                {
+                    "inline": false,
+                    "name": "G\u00eaneros",
+                    "value": "Romance, Shounen Ai, Manhwa, Webtoon"
+                }
+            ],
+            "color": 12806537,
+            "type": "rich"
+        }
     ]
 }

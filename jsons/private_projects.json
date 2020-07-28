@@ -136,5 +136,14 @@
                 "Rin"
             ]
         }
+    },
+    "737608005805408358": {
+        "name": "Wild Robber",
+        "roles": {
+            "Cleaning": [],
+            "Redraw": [],
+            "Traducao": [],
+            "Typesetting": []
+        }
     }
 }
