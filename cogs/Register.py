@@ -76,7 +76,7 @@ class Register(commands.Cog):
         await private_message.add_reaction(settings["emoji"]["typesetter"])
         with open("jsons/private_projects.json", "w") as f:
             json.dump(self.private_projects, f, indent=4)
-        await self.__update_private()
+        # await self.__update_private()
 
     async def __public_send(self, title, short_title, sinopsis, image, genres):
         print("called __public_send")
@@ -92,7 +92,7 @@ class Register(commands.Cog):
         self.public_projects[public_message.id] = [short_title, embed.to_dict()]
         with open("jsons/public_projects.json", "w") as f:
             json.dump(self.public_projects, f, indent=4)
-        await self.__update_public()
+        # await self.__update_public()
 
     async def __update_public(self):
         async for message in self.bot.get_channel(settings["PUBPRJID"]).history():
