@@ -74,7 +74,7 @@ class Register(commands.Cog):
         await private_message.add_reaction(settings["emoji"]["redrawer"])
         await private_message.add_reaction(settings["emoji"]["translator"])
         await private_message.add_reaction(settings["emoji"]["typesetter"])
-        with open("private_projects.json", "w") as f:
+        with open("jsons/private_projects.json", "w") as f:
             json.dump(self.private_projects, f, indent=4)
         await self.__update_private()
 
@@ -90,7 +90,7 @@ class Register(commands.Cog):
         public_message = await self.bot.get_channel(channel_id).send(embed=embed)
         await public_message.add_reaction(settings["emoji"]["viewer"])
         self.public_projects[public_message.id] = [short_title, embed.to_dict()]
-        with open("json/public_projects.json", "w") as f:
+        with open("jsons/public_projects.json", "w") as f:
             json.dump(self.public_projects, f, indent=4)
         await self.__update_public()
 
@@ -163,7 +163,6 @@ class Register(commands.Cog):
     @commands.command()
     @is_admin()
     async def ap(self, ctx, *args):
-        print("a")
         guild = ctx.guild
         try:
             title, short_title, sinopsis, image, genres = args
