@@ -22,7 +22,7 @@ class CustomReactions(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         self.load_images()
-        print("Loaded Images")
+        print("Loaded CustomReactions")
 
     def load_images(self):
         with open("jsons/CRData.json", "r") as file:
