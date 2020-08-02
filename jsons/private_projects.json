@@ -12,7 +12,7 @@
                 "Rin"
             ],
             "Typesetting": [
-                "Rin"
+                "Drakk"
             ]
         }
     },
@@ -29,7 +29,8 @@
                 "Gumi"
             ],
             "Typesetting": [
-                "Daby"
+                "[蓮]XxIsraelxX",
+                "Drakk"
             ]
         }
     },
@@ -149,42 +150,6 @@
                 "\ud835\udcdf oem^u^",
                 "Rin"
             ]
-        }
-    },
-    "739552712386936926": {
-        "name": "Titulo curto",
-        "roles": {
-            "Cleaning": [],
-            "Redraw": [],
-            "Traducao": [],
-            "Typesetting": []
-        }
-    },
-    "739553437687087315": {
-        "name": "Titulo curto",
-        "roles": {
-            "Cleaning": [],
-            "Redraw": [],
-            "Traducao": [],
-            "Typesetting": []
-        }
-    },
-    "739555557370888223": {
-        "name": "Titulo curto",
-        "roles": {
-            "Cleaning": [],
-            "Redraw": [],
-            "Traducao": [],
-            "Typesetting": []
-        }
-    },
-    "739556401126441123": {
-        "name": "Titulo curto",
-        "roles": {
-            "Cleaning": [],
-            "Redraw": [],
-            "Traducao": [],
-            "Typesetting": []
         }
     }
 }
