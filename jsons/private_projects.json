@@ -80,7 +80,6 @@
                 "Rin"
             ],
             "Typesetting": [
-                "Manu",
                 "Rin"
             ]
         }
@@ -123,7 +122,6 @@
         "name": "The Abandoned Empress",
         "roles": {
             "Cleaning": [
-                "Manu",
                 "Rin"
             ],
             "Redraw": [
@@ -139,6 +137,49 @@
     },
     "737608005805408358": {
         "name": "Wild Robber",
+        "roles": {
+            "Cleaning": [
+                "Rin"
+            ],
+            "Redraw": [],
+            "Traducao": [
+                "Rin"
+            ],
+            "Typesetting": [
+                "\ud835\udcdf oem^u^",
+                "Rin"
+            ]
+        }
+    },
+    "739552712386936926": {
+        "name": "Titulo curto",
+        "roles": {
+            "Cleaning": [],
+            "Redraw": [],
+            "Traducao": [],
+            "Typesetting": []
+        }
+    },
+    "739553437687087315": {
+        "name": "Titulo curto",
+        "roles": {
+            "Cleaning": [],
+            "Redraw": [],
+            "Traducao": [],
+            "Typesetting": []
+        }
+    },
+    "739555557370888223": {
+        "name": "Titulo curto",
+        "roles": {
+            "Cleaning": [],
+            "Redraw": [],
+            "Traducao": [],
+            "Typesetting": []
+        }
+    },
+    "739556401126441123": {
+        "name": "Titulo curto",
         "roles": {
             "Cleaning": [],
             "Redraw": [],
