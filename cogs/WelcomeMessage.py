@@ -27,7 +27,7 @@ class WelcomeMessage(commands.Cog):
     async def on_member_join(self, member):
         color = settings["EMBED_COLOR_WELCOME"]
         user = member.mention
-        regras = discord.utils.get(member.guild.get_all_channels(), name="#❗-regras").mention
+        regras = discord.utils.get(member.guild.channels, name="#❗-regras").mention
         recrutamento = discord.utils.get(member.guild.get_all_channels(), name="#📣-recrutamento").mention
         embed = discord.Embed(color=color, type="rich", description=f"Olá, {user}!\nLeia as {regras} antes de tudo")
         embed.set_image(url="https://imgur.com/a/PBLIxH2")
