@@ -26,11 +26,14 @@ class WelcomeMessage(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         color = settings["EMBED_COLOR_WELCOME"]
-        embed = discord.Embed(color=color, type="rich", description="Olá\nLeia as #❗-regras antes de tudo")
+        user = member.mention
+        regras = discord.utils.get(member.guild.get_all_channels(), name="#❗-regras").mention
+        recrutamento = discord.utils.get(member.guild.get_all_channels(), name="#📣-recrutamento").mention
+        embed = discord.Embed(color=color, type="rich", description=f"Olá, {user}!\nLeia as {regras} antes de tudo")
         embed.set_image(url="https://imgur.com/a/PBLIxH2")
-        embed.add_field(name="Recrutamento", value="Se você está aqui para recrutamento, deixe seu nome e o cargo que "
-                                                   "quer fazer no canal #📣-recrutamento.\nUm staff (vulgo eu ou rin) "
-                                                   "vai entrar em contato assim que puder", inline=False)
+        embed.add_field(name="Recrutamento", value=f"Se você está aqui para recrutamento, deixe seu nome e o cargo que "
+                                                   f"quer fazer no canal {recrutamento}.\nUm staff (vulgo eu ou rin) "
+                                                   f"vai entrar em contato assim que puder", inline=False)
         await member.guild.system_channel.send(embed=embed)
 
 
