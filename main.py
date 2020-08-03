@@ -13,17 +13,19 @@ client = commands.Bot(command_prefix=settings["BOT_PREFIX"])
 @client.command()
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
+    await ctx.message.delete(delay=1)
 
 
 @client.command()
 async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
+    await ctx.message.delete(delay=1)
 
 
 @client.command()
 async def reload(ctx, extension):
     client.reload_extension(f'cogs.{extension}')
-
+    await ctx.message.delete(delay=1)
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
