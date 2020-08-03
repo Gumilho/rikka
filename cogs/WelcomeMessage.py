@@ -25,7 +25,7 @@ class WelcomeMessage(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        color = int(settings["EMBED_COLOR_WELCOME"])
+        color = settings["EMBED_COLOR_WELCOME"]
         embed = discord.Embed(color=color, type="rich", description="Olá\nLeia as #❗-regras antes de tudo")
         embed.set_image(url="https://imgur.com/a/PBLIxH2")
         embed.add_field(name="Recrutamento", value="Se você está aqui para recrutamento, deixe seu nome e o cargo que "
