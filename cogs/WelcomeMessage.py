@@ -30,7 +30,7 @@ class WelcomeMessage(commands.Cog):
         regras = member.guild.get_channel(settings["REGRAS_ID"]).mention
         recrutamento = member.guild.get_channel(settings["RECRUIT_ID"]).mention
         embed = discord.Embed(color=color, type="rich", description=f"Olá, {user}!\nLeia as {regras} antes de tudo")
-        embed.set_image(url="https://imgur.com/a/PBLIxH2")
+        embed.set_image(url=settings['WELCOME_IMAGE'])
         embed.add_field(name="Recrutamento", value=f"Se você está aqui para recrutamento, deixe seu nome e o cargo que "
                                                    f"quer fazer no canal {recrutamento}.\nUm staff (vulgo eu ou rin) "
                                                    f"vai entrar em contato assim que puder", inline=False)
