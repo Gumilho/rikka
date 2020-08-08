@@ -1,6 +1,7 @@
 venv/
 .idea/
 cogs/__pycache__/
+__pycache__/
 
 Secret.py
 test.py
