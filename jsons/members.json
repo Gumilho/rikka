@@ -1,3 +1,87 @@
 {
-  "Rin": {""}
+    "Rin": {
+        "Cleaning": [
+            "Kanna no nichijou",
+            "Sayonara",
+            "Celebgram",
+            "The Abandoned Empress",
+            "Wild Robber"
+        ],
+        "Typesetting": [
+            "Sayonara",
+            "Hourglass",
+            "Omotenashi Gohan",
+            "Celebgram",
+            "The Abandoned Empress",
+            "Wild Robber"
+        ],
+        "Traducao": [
+            "Hourglass",
+            "Celebgram",
+            "Wild Robber"
+        ]
+    },
+    "Gumi": {
+        "Redraw": [
+            "First Class Servant",
+            "Sayonara",
+            "Homura sensei",
+            "Hourglass",
+            "Omotenashi Gohan",
+            "Celebgram",
+            "The Abandoned Empress",
+            "Kanna no nichijou"
+        ],
+        "Traducao": [
+            "First Class Servant"
+        ]
+    },
+    "Haru": {
+        "Traducao": [
+            "Kanna no nichijou"
+        ]
+    },
+    "Drakk": {
+        "Typesetting": [
+            "Kanna no nichijou",
+            "First Class Servant"
+        ]
+    },
+    "Manu": {
+        "Cleaning": [
+            "First Class Servant",
+            "Hourglass",
+            "Omotenashi Gohan"
+        ],
+        "Typesetting": [
+            "Homura sensei"
+        ]
+    },
+    "[\u84ee]XxIsraelxX": {
+        "Typesetting": [
+            "First Class Servant"
+        ]
+    },
+    "Carlos Marcos": {
+        "Traducao": [
+            "Sayonara",
+            "Homura sensei",
+            "Omotenashi Gohan"
+        ]
+    },
+    "Daby": {
+        "Cleaning": [
+            "Homura sensei"
+        ]
+    },
+    "Nana": {
+        "Traducao": [
+            "The Abandoned Empress"
+        ]
+    },
+    "\ud835\udcdf oem^u^": {
+        "Typesetting": [
+            "Wild Robber"
+        ]
+    }
 }

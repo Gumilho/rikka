@@ -1,12 +1,7 @@
 import json
 import discord
 from discord.ext import commands, tasks
-
-
-def is_admin():
-    async def predicate(ctx):
-        return any(filter(lambda role: role.name == "Admin", ctx.author.roles))
-    return commands.check(predicate)
+import yaml
 
 
 class Register(commands.Cog):
@@ -14,15 +9,21 @@ class Register(commands.Cog):
         self.bot = bot
         self.public_projects = {}
         self.private_projects = {}
+        self.members = {}
         with open("jsons/settings.json", "r") as f:
             self.settings = json.load(f)
 
     @commands.Cog.listener()
     async def on_ready(self):
         self.update.start()
+        self.load_json()
+        # await self.init_members()
         print("Loaded Register")
 
     def save_json(self):
+
+        with open("jsons/members.json", "w") as f:
+            json.dump(self.members, f, indent=4)
 
         with open("jsons/private_projects.json", "w") as f:
             json.dump(self.private_projects, f, indent=4)
@@ -31,6 +32,9 @@ class Register(commands.Cog):
             json.dump(self.public_projects, f, indent=4)
 
     def load_json(self):
+
+        with open("jsons/members.json", "r") as f:
+            self.members = json.load(f)
 
         with open("jsons/public_projects.json", "r") as f:
             self.public_projects = json.load(f)
@@ -83,12 +87,12 @@ class Register(commands.Cog):
         self.public_projects[public_message.id] = [short_title, embed.to_dict()]
         self.save_json()
 
-    async def __update_public(self):
+    async def update_public(self):
         public_project_channel = self.bot.get_channels(self.settings["PUBPRJID"])
         async for message in public_project_channel.history():
-            await self.__update_public_message(message)
+            await self.update_public_message(message)
 
-    async def __update_public_message(self, message):
+    async def update_public_message(self, message):
         for reaction in message.reactions:
             if str(reaction.emoji) == self.settings["emoji"]["viewer"]:
                 role = discord.utils.get(message.guild.roles, name=self.public_projects[str(message.id)][0])
@@ -101,20 +105,12 @@ class Register(commands.Cog):
                     if user.name != "Rikka":
                         await user.add_roles(role)
 
-    async def __update_private(self):
+    async def update_private(self):
         private_project_channel = self.bot.get_channels(self.settings["PRIPRJID"])
         async for message in private_project_channel.history():
-            await self.__update_private_message(message)
+            await self.update_private_message(message)
 
-    def __change_json(self, args):
-        for key, project in self.private_projects.items():
-            if project["name"].lower() == args[0].lower():
-                project["roles"][args[1].title()].append(args[2])
-                self.private_projects[key] = project
-                self.save_json()
-                return key
-
-    async def __update_private_message(self, message):
+    async def update_private_message(self, message):
         project = self.private_projects[str(message.id)]
         new_content = f"```{project['name']} \n" \
                       f"\n\tCleaning: {' '.join(project['roles']['Cleaning'])}" \
@@ -122,6 +118,39 @@ class Register(commands.Cog):
                       f"\n\tTraducao: {' '.join(project['roles']['Traducao'])}" \
                       f"\n\tTypesetting: {' '.join(project['roles']['Typesetting'])}```"
         await message.edit(content=new_content)
+
+    def change_json(self, args):
+        for key, project in self.private_projects.items():
+            if project["name"].lower() == args[0].lower():
+                project["roles"][args[1].title()].append(args[2])
+                self.private_projects[key] = project
+                self.save_json()
+                return key
+
+    async def init_members(self):
+        members_channel = self.bot.get_channel(self.settings["MEMBERID"])
+        await members_channel.send("```" + yaml.dump(self.members, indent=4, allow_unicode=True) + "```")
+
+    async def update_members(self):
+        await self.update_members_json()
+        members_channel = self.bot.get_channel(self.settings["MEMBERID"])
+        async for message in members_channel.history():
+            await self.update_members_message(message)
+
+    async def update_members_message(self, message):
+        await message.edit(content="```" + yaml.dump(self.members, indent=4, allow_unicode=True) + "```")
+
+    async def update_members_json(self):
+        for project in self.private_projects.values():
+            for role in project["roles"]:
+                for member in project["roles"][role]:
+                    if member not in self.members:
+                        self.members[member] = {}
+                    if role not in self.members[member]:
+                        self.members[member][role] = []
+                    if project["name"] not in self.members[member][role]:
+                        self.members[member][role].append(project["name"])
+        self.save_json()
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
@@ -147,15 +176,6 @@ class Register(commands.Cog):
 
     @commands.command()
     @commands.has_role("Admin")
-    async def addmember(self, ctx, *args):
-        key = self.__change_json(args)
-        private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
-        message = await private_project_channel.fetch_message(int(key))
-        await self.__update_private_message(message)
-        await ctx.message.delete(delay=2)
-
-    @commands.command()
-    @commands.has_role("Admin")
     async def addproject(self, ctx, *args):
         guild = ctx.guild
         title, short_title, sinopsis, image, genres = args
@@ -164,18 +184,26 @@ class Register(commands.Cog):
         await self.__public_send(title, short_title, sinopsis, image, genres)
         await ctx.message.delete(delay=2)
 
-    @commands.command()
-    @commands.has_role("Admin")
     @tasks.loop(hours=1)
     async def update(self):
         self.load_json()
-        await self.__update_public()
-        await self.__update_private()
+        await self.update_members()
+        await self.update_public()
+        await self.update_private()
 
     @addproject.error
     async def addproject_error(self, ctx, error):
         if isinstance(error, commands.CheckFailure):
             pass
+
+    @commands.command()
+    @commands.has_role("Admin")
+    async def addmember(self, ctx, *args):
+        key = self.change_json(args)
+        private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
+        message = await private_project_channel.fetch_message(int(key))
+        await self.update_private_message(message)
+        await ctx.message.delete(delay=2)
 
 
 def setup(client):
