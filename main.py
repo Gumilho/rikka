@@ -2,6 +2,7 @@ import os
 import pathlib
 import json
 from discord.ext import commands
+from Secret import TOKEN
 
 os.chdir(pathlib.Path(__file__).parent.absolute())
 with open("jsons/settings.json", "r") as f:
@@ -31,4 +32,4 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
-client.run(settings["TOKEN"])
+client.run(TOKEN)

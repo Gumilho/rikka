@@ -1,6 +1,7 @@
 venv/
 .idea/
 cogs/__pycache__/
+__pycache__/
 
-settings.json
+Secret.py
 test.py

@@ -2,22 +2,14 @@ import json
 import discord
 from discord.ext import commands
 
-with open("jsons/settings.json", "r") as f:
-    settings = json.load(f)
-
-
-def is_admin():
-    async def predicate(ctx):
-        return any(filter(lambda role: role.name == "Admin", ctx.author.roles))
-
-    return commands.check(predicate)
-
 
 class CustomReactions(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
         self.reactions = {}
+        with open("jsons/settings.json", "r") as f:
+            self.settings = json.load(f)
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -25,11 +17,11 @@ class CustomReactions(commands.Cog):
         print("Loaded CustomReactions")
 
     def load_images(self):
-        with open("jsons/CRData.json", "r") as file:
-            self.reactions = json.load(file)
+        with open("jsons/CRData.json", "r") as f:
+            self.reactions = json.load(f)
 
     @commands.command()
-    @is_admin()
+    @commands.has_role("Admin")
     async def addemote(self, ctx, cmd, reaction):
         self.reactions[cmd] = reaction
         with open("jsons/CRData.json", "w") as file:
@@ -38,7 +30,7 @@ class CustomReactions(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if not message.content.startswith(settings["BOT_PREFIX"]):
+        if not message.content.startswith(self.settings["BOT_PREFIX"]):
             return
         emote = message.content[1:].split()[0]
         if emote in self.reactions.keys():
