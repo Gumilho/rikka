@@ -88,7 +88,7 @@ class Register(commands.Cog):
         self.save_json()
 
     async def update_public(self):
-        public_project_channel = self.bot.get_channels(self.settings["PUBPRJID"])
+        public_project_channel = self.bot.get_channel(self.settings["PUBPRJID"])
         async for message in public_project_channel.history():
             await self.update_public_message(message)
 
@@ -106,7 +106,7 @@ class Register(commands.Cog):
                         await user.add_roles(role)
 
     async def update_private(self):
-        private_project_channel = self.bot.get_channels(self.settings["PRIPRJID"])
+        private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
         async for message in private_project_channel.history():
             await self.update_private_message(message)
 
