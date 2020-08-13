@@ -218,5 +218,27 @@
             "color": 12806537,
             "type": "rich"
         }
+    ],
+    "743611240680783932": [
+        "Bully",
+        {
+            "image": {
+                "url": "https://mangadex.org/images/manga/47165.jpeg?1595156284"
+            },
+            "fields": [
+                {
+                    "inline": false,
+                    "name": "When You're Targeted by the Bully",
+                    "value": "Um dia, Kim Yeondoo, uma estudande do ensino m\u00e9dio comum, fica aterrorizada por seu antigo amigo do fundamental e stalker no KakaoTalk. Para faz\u00ea-lo parar, ela muda sua foto de perfil para a de um cara aleat\u00f3rio e posta que ele \u00e9 seu namorado. Mas, acontece que a foto que ela usou \u00e9 do valent\u00e3o mais assustador da escola, Ji HyunHo?!\n\nNo desenrolar, oa valent\u00f5es s\u00e3o o tsundere, Ji HyunHo, o esperto e legal, Seo JuHo, e o jovem que vive no andar de cima, Kang AhUn. N\u00e3o s\u00f3 isso, tamb\u00e9m h\u00e1 o garoto do baseball do My Way, Choi SeungHyun, e o puro e animado, Jung JiSung.\n\nComo ela acabou se envolvendo com os valent\u00f5es bonitos?\n\nPrimeiro lugar no ranking da AppleStore na Cor\u00e9ia no lan\u00e7amento do jogo,\n\nPrimeiro lugar no ranking da Google Play,\n\nJunto com a conquista de um total de 2 milh\u00f5es de downloads,\n\nEu realmente queria viver como uma estudante comum. At\u00e9 que eu conheci esses merdas!!! Eu me envolvi com os valent\u00f5es por conta de uma escolha errada na hora errada!\n\nEstou sendo focada por eles!!!"
+                },
+                {
+                    "inline": false,
+                    "name": "G\u00eaneros",
+                    "value": "Com\u00e9dia, Drama, Romance"
+                }
+            ],
+            "color": 12806537,
+            "type": "rich"
+        }
     ]
 }
