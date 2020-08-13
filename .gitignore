@@ -3,5 +3,7 @@ venv/
 cogs/__pycache__/
 __pycache__/
 
+jsons/private_projects.yaml
+jsons/public_projects.json
 Secret.py
 test.py

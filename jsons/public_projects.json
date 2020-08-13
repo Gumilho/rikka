@@ -196,5 +196,27 @@
             "color": 12806537,
             "type": "rich"
         }
+    ],
+    "743604149458829403": [
+        "Red Flowers",
+        {
+            "image": {
+                "url": "https://i2.wp.com/static3.mangalivre.com/capas/XhL7LLiNVd6J5VGL3W_I0g/10559/capa.jpg?quality=100"
+            },
+            "fields": [
+                {
+                    "inline": false,
+                    "name": "The Garden of Red Flowers",
+                    "value": "Uma hist\u00f3ria de algu\u00e9m que reencarna como um feliz personagem secund\u00e1rio no romance de uma amiga, mas assume a mis\u00e9ria do personagem principal."
+                },
+                {
+                    "inline": false,
+                    "name": "G\u00eaneros",
+                    "value": "Drama, Fantasia, Josei, Romance, Sci-FI, Shoujo, Sobrenatural"
+                }
+            ],
+            "color": 12806537,
+            "type": "rich"
+        }
     ]
 }

@@ -1,39 +1,68 @@
 {
-    "Rin": {
+    "Manu": {
         "Cleaning": [
-            "Kanna no nichijou",
-            "Sayonara",
-            "Celebgram",
-            "The Abandoned Empress",
-            "Wild Robber"
+            "First Class Servant",
+            "Omotenashi Gohan"
         ],
         "Typesetting": [
-            "Sayonara",
+            "Homura sensei"
+        ]
+    },
+    "Rin": {
+        "Quality Check": [
+            "First Class Servant",
+            "Homura sensei",
             "Hourglass",
+            "Kanna no nichijou",
             "Omotenashi Gohan",
-            "Celebgram",
-            "The Abandoned Empress",
-            "Wild Robber"
+            "Pond Snail Robber",
+            "Sayonara",
+            "The Abandoned Empress"
+        ],
+        "Revisao": [
+            "First Class Servant",
+            "Homura sensei",
+            "Hourglass",
+            "Kanna no nichijou",
+            "Omotenashi Gohan",
+            "Sayonara",
+            "The Abandoned Empress"
+        ],
+        "Typesetting": [
+            "First Class Servant",
+            "Hourglass",
+            "Kanna no nichijou",
+            "Omotenashi Gohan",
+            "Sayonara",
+            "The Abandoned Empress"
+        ],
+        "Cleaning": [
+            "Hourglass",
+            "Kanna no nichijou",
+            "Sayonara",
+            "The Abandoned Empress"
         ],
         "Traducao": [
-            "Hourglass",
-            "Celebgram",
-            "Wild Robber"
+            "Hourglass"
         ]
     },
     "Gumi": {
         "Redraw": [
             "First Class Servant",
-            "Sayonara",
-            "Homura sensei",
             "Hourglass",
+            "Kanna no nichijou",
             "Omotenashi Gohan",
-            "Celebgram",
-            "The Abandoned Empress",
-            "Kanna no nichijou"
+            "Sayonara"
         ],
         "Traducao": [
-            "First Class Servant"
+            "First Class Servant",
+            "Omotenashi Gohan"
+        ]
+    },
+    "Carlos Marcos": {
+        "Traducao": [
+            "Homura sensei",
+            "Sayonara"
         ]
     },
     "Haru": {
@@ -41,47 +70,24 @@
             "Kanna no nichijou"
         ]
     },
-    "Drakk": {
-        "Typesetting": [
-            "Kanna no nichijou",
-            "First Class Servant"
-        ]
-    },
-    "Manu": {
-        "Cleaning": [
-            "First Class Servant",
-            "Hourglass",
-            "Omotenashi Gohan"
-        ],
-        "Typesetting": [
-            "Homura sensei"
-        ]
-    },
-    "[\u84ee]XxIsraelxX": {
-        "Typesetting": [
-            "First Class Servant"
-        ]
-    },
-    "Carlos Marcos": {
+    "Clara": {
         "Traducao": [
-            "Sayonara",
-            "Homura sensei",
-            "Omotenashi Gohan"
+            "Pond Snail Robber"
         ]
     },
-    "Daby": {
-        "Cleaning": [
-            "Homura sensei"
+    "Poemu": {
+        "Typesetting": [
+            "Pond Snail Robber"
         ]
     },
-    "Nana": {
-        "Traducao": [
+    "Cami": {
+        "Redraw": [
             "The Abandoned Empress"
         ]
     },
-    "\ud835\udcdf oem^u^": {
-        "Typesetting": [
-            "Wild Robber"
+    "artsyara": {
+        "Traducao": [
+            "The Abandoned Empress"
         ]
     }
 }

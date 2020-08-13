@@ -1,4 +1,6 @@
 import json
+import re
+
 import discord
 from discord.ext import commands, tasks
 import yaml
@@ -13,11 +15,18 @@ class Register(commands.Cog):
         with open("jsons/settings.json", "r") as f:
             self.settings = json.load(f)
 
+    async def change_name(self, old_name, new_name):
+        private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
+        async for message in private_project_channel.history():
+            name = message.content.split('\n', 1)[0][3:-1]
+            if name == old_name:
+                await message.edit(content=message.content.replace(old_name, new_name))
+
     @commands.Cog.listener()
     async def on_ready(self):
-        self.update.start()
+
         self.load_json()
-        # await self.init_members()
+        self.update.start()
         print("Loaded Register")
 
     def save_json(self):
@@ -25,8 +34,8 @@ class Register(commands.Cog):
         with open("jsons/members.json", "w") as f:
             json.dump(self.members, f, indent=4)
 
-        with open("jsons/private_projects.json", "w") as f:
-            json.dump(self.private_projects, f, indent=4)
+        with open("jsons/private_projects.yaml", "w") as f:
+            yaml.dump(self.private_projects, f, indent=4)
 
         with open("jsons/public_projects.json", "w") as f:
             json.dump(self.public_projects, f, indent=4)
@@ -36,11 +45,11 @@ class Register(commands.Cog):
         with open("jsons/members.json", "r") as f:
             self.members = json.load(f)
 
+        with open("jsons/private_projects.yaml", "r") as f:
+            self.private_projects = yaml.safe_load(f)
+
         with open("jsons/public_projects.json", "r") as f:
             self.public_projects = json.load(f)
-
-        with open("jsons/private_projects.json", "r") as f:
-            self.private_projects = json.load(f)
 
     async def __create_channel(self, short_title, guild):
         print("Called create_category")
@@ -55,23 +64,19 @@ class Register(commands.Cog):
 
     async def __private_send(self, short_title):
         print("called __private_send")
-        private_text = f"```{short_title}\n" \
-                       f"\n\tCleaning: " \
-                       f"\n\tRedraw: " \
-                       f"\n\tTraducao: " \
-                       f"\n\tTypesetting: ``` "
         private_dict = {
-            "name": short_title,
-            "roles": {
-                "Cleaning": [],
-                "Redraw": [],
-                "Traducao": [],
-                "Typesetting": [],
+            short_title: {
+                "Cleaning": "",
+                "Redraw": "",
+                "Traducao": "",
+                "Revisao": "",
+                "Typesetting": "",
+                "Quality Check": ""
             }
         }
-        channel_id = self.settings["PRIPRJID"]
-        private_message = await self.bot.get_channel(channel_id).send(private_text)
-        self.private_projects[private_message.id] = private_dict
+        message = await self.bot.get_channel(self.settings["PRIPRJID"]).send('```' + short_title + ':')
+        self.private_projects.update(private_dict)
+        await self.update_private_message(message)
 
     async def __public_send(self, title, short_title, sinopsis, image, genres):
         print("called __public_send")
@@ -111,12 +116,15 @@ class Register(commands.Cog):
             await self.update_private_message(message)
 
     async def update_private_message(self, message):
-        project = self.private_projects[str(message.id)]
-        new_content = f"```{project['name']} \n" \
-                      f"\n\tCleaning: {' '.join(project['roles']['Cleaning'])}" \
-                      f"\n\tRedraw: {' '.join(project['roles']['Redraw'])}" \
-                      f"\n\tTraducao: {' '.join(project['roles']['Traducao'])}" \
-                      f"\n\tTypesetting: {' '.join(project['roles']['Typesetting'])}```"
+        name = message.content.split('\n', 1)[0][3:-1]
+        project = self.private_projects[name]
+        new_content = f"```{name} \n" \
+                      f"\n\tCleaning: {project['Cleaning']}" \
+                      f"\n\tRedraw: {project['Redraw']}" \
+                      f"\n\tTraducao: {project['Traducao']}" \
+                      f"\n\tRevisao: {project['Revisao']}" \
+                      f"\n\tTypesetting: {project['Typesetting']}" \
+                      f"\n\tQuality Check: {project['Quality Check']}```"
         await message.edit(content=new_content)
 
     def change_json(self, args):
@@ -126,10 +134,6 @@ class Register(commands.Cog):
                 self.private_projects[key] = project
                 self.save_json()
                 return key
-
-    async def init_members(self):
-        members_channel = self.bot.get_channel(self.settings["MEMBERID"])
-        await members_channel.send("```" + yaml.dump(self.members, indent=4, allow_unicode=True) + "```")
 
     async def update_members(self):
         await self.update_members_json()
@@ -141,15 +145,16 @@ class Register(commands.Cog):
         await message.edit(content="```" + yaml.dump(self.members, indent=4, allow_unicode=True) + "```")
 
     async def update_members_json(self):
-        for project in self.private_projects.values():
-            for role in project["roles"]:
-                for member in project["roles"][role]:
-                    if member not in self.members:
-                        self.members[member] = {}
-                    if role not in self.members[member]:
-                        self.members[member][role] = []
-                    if project["name"] not in self.members[member][role]:
-                        self.members[member][role].append(project["name"])
+        for name, roles in self.private_projects.items():
+            for role, member in roles.items():
+                if member == "" or (member.startswith('*') and member.endswith('*')):
+                    continue
+                if member not in self.members:
+                    self.members[member] = {}
+                if role not in self.members[member]:
+                    self.members[member][role] = []
+                if name not in self.members[member][role]:
+                    self.members[member][role].append(name)
         self.save_json()
 
     @commands.Cog.listener()
