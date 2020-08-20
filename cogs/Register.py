@@ -203,6 +203,14 @@ class Register(commands.Cog):
 
     @commands.command()
     @commands.has_role("Admin")
+    async def update_projects(self, ctx):
+        self.load_json()
+        await self.update_members()
+        await self.update_public()
+        await self.update_private()
+
+    @commands.command()
+    @commands.has_role("Admin")
     async def addmember(self, ctx, *args):
         key = self.change_json(args)
         private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
