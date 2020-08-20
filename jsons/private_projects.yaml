@@ -1,10 +1,10 @@
 Bully:
-    Cleaning: ''
-    Quality Check: ''
-    Redraw: ''
-    Revisao: ''
-    Traducao: ''
-    Typesetting: ''
+    Cleaning: Rin
+    Quality Check: Rin
+    Redraw: Gumi
+    Revisao: Rin
+    Traducao: Rin
+    Typesetting: nana
 Celebgram DROPADO:
     Cleaning: ''
     Quality Check: ''
@@ -20,14 +20,14 @@ First Class Servant:
     Traducao: Gumi
     Typesetting: Rin
 Homura sensei:
-    Cleaning: ''
+    Cleaning: '*DUO*'
     Quality Check: Rin
-    Redraw: ''
+    Redraw: '*DUO*'
     Revisao: Rin
-    Traducao: Carlos Marcos
-    Typesetting: Manu
+    Traducao: Gumi
+    Typesetting: '*DUO*'
 Hourglass:
-    Cleaning: Rin
+    Cleaning: Manu
     Quality Check: Rin
     Redraw: Gumi
     Revisao: Rin
@@ -46,7 +46,7 @@ Omotenashi Gohan:
     Redraw: Gumi
     Revisao: Rin
     Traducao: Gumi
-    Typesetting: Rin
+    Typesetting: nana
 Pond Snail Robber:
     Cleaning: '*Lau*'
     Quality Check: Rin
@@ -55,12 +55,12 @@ Pond Snail Robber:
     Traducao: Clara
     Typesetting: Poemu
 Red Flowers:
-    Cleaning: ''
-    Quality Check: ''
-    Redraw: ''
-    Revisao: ''
-    Traducao: ''
-    Typesetting: ''
+    Cleaning: Rin
+    Quality Check: Rin
+    Redraw: Gumi
+    Revisao: Rin
+    Traducao: Rin
+    Typesetting: Rin
 Sayonara:
     Cleaning: Rin
     Quality Check: Rin
@@ -73,5 +73,5 @@ The Abandoned Empress:
     Quality Check: Rin
     Redraw: Cami
     Revisao: Rin
-    Traducao: artsyara
+    Traducao: nana
     Typesetting: Rin
