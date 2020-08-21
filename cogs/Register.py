@@ -108,7 +108,8 @@ class Register(commands.Cog):
                 # Add manga roles
                 async for user in reaction.users():
                     if user.name != "Rikka":
-                        await user.add_roles(role)
+                        if message.guild.get_member(user.id) is not None:
+                            await user.add_roles(role)
 
     async def update_private(self):
         private_project_channel = self.bot.get_channel(self.settings["PRIPRJID"])
@@ -117,6 +118,7 @@ class Register(commands.Cog):
 
     async def update_private_message(self, message):
         name = message.content.split('\n', 1)[0][3:-1]
+        print('updating ', name)
         project = self.private_projects[name]
         new_content = f"```{name} \n" \
                       f"\n\tCleaning: {project['Cleaning']}" \

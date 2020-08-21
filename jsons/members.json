@@ -2,7 +2,8 @@
     "Manu": {
         "Cleaning": [
             "First Class Servant",
-            "Omotenashi Gohan"
+            "Omotenashi Gohan",
+            "Hourglass"
         ],
         "Typesetting": [
             "Homura sensei"
@@ -17,7 +18,9 @@
             "Omotenashi Gohan",
             "Pond Snail Robber",
             "Sayonara",
-            "The Abandoned Empress"
+            "The Abandoned Empress",
+            "Bully",
+            "Red Flowers"
         ],
         "Revisao": [
             "First Class Servant",
@@ -26,7 +29,9 @@
             "Kanna no nichijou",
             "Omotenashi Gohan",
             "Sayonara",
-            "The Abandoned Empress"
+            "The Abandoned Empress",
+            "Bully",
+            "Red Flowers"
         ],
         "Typesetting": [
             "First Class Servant",
@@ -34,16 +39,21 @@
             "Kanna no nichijou",
             "Omotenashi Gohan",
             "Sayonara",
-            "The Abandoned Empress"
+            "The Abandoned Empress",
+            "Red Flowers"
         ],
         "Cleaning": [
             "Hourglass",
             "Kanna no nichijou",
             "Sayonara",
-            "The Abandoned Empress"
+            "The Abandoned Empress",
+            "Bully",
+            "Red Flowers"
         ],
         "Traducao": [
-            "Hourglass"
+            "Hourglass",
+            "Bully",
+            "Red Flowers"
         ]
     },
     "Gumi": {
@@ -52,11 +62,14 @@
             "Hourglass",
             "Kanna no nichijou",
             "Omotenashi Gohan",
-            "Sayonara"
+            "Sayonara",
+            "Bully",
+            "Red Flowers"
         ],
         "Traducao": [
             "First Class Servant",
-            "Omotenashi Gohan"
+            "Omotenashi Gohan",
+            "Homura sensei"
         ]
     },
     "Carlos Marcos": {
@@ -86,6 +99,15 @@
         ]
     },
     "artsyara": {
+        "Traducao": [
+            "The Abandoned Empress"
+        ]
+    },
+    "nana": {
+        "Typesetting": [
+            "Bully",
+            "Omotenashi Gohan"
+        ],
         "Traducao": [
             "The Abandoned Empress"
         ]
