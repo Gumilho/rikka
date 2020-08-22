@@ -20,7 +20,8 @@
             "Sayonara",
             "The Abandoned Empress",
             "Bully",
-            "Red Flowers"
+            "Red Flowers",
+            "Angel"
         ],
         "Revisao": [
             "First Class Servant",
@@ -31,7 +32,9 @@
             "Sayonara",
             "The Abandoned Empress",
             "Bully",
-            "Red Flowers"
+            "Red Flowers",
+            "Angel",
+            "Royal Chef"
         ],
         "Typesetting": [
             "First Class Servant",
@@ -48,7 +51,8 @@
             "Sayonara",
             "The Abandoned Empress",
             "Bully",
-            "Red Flowers"
+            "Red Flowers",
+            "Angel"
         ],
         "Traducao": [
             "Hourglass",
@@ -64,7 +68,8 @@
             "Omotenashi Gohan",
             "Sayonara",
             "Bully",
-            "Red Flowers"
+            "Red Flowers",
+            "Angel"
         ],
         "Traducao": [
             "First Class Servant",
@@ -106,10 +111,13 @@
     "nana": {
         "Typesetting": [
             "Bully",
-            "Omotenashi Gohan"
+            "Omotenashi Gohan",
+            "Angel"
         ],
         "Traducao": [
-            "The Abandoned Empress"
+            "The Abandoned Empress",
+            "Angel",
+            "Royal Chef"
         ]
     }
 }

@@ -240,5 +240,49 @@
             "color": 12806537,
             "type": "rich"
         }
+    ],
+    "746676345219579914": [
+        "Angel",
+        {
+            "image": {
+                "url": "https://mangadex.org/images/manga/51695.jpeg?1595156121"
+            },
+            "fields": [
+                {
+                    "inline": false,
+                    "name": "Angel",
+                    "value": "Eli deseja se tornar o 'melhor anjo' algum dia no futuro, mas na verdade ela n\u00e3o passa de uma alvoro\u00e7ada nos c\u00e9us.\n\nEla \u00e9 ent\u00e3o atribu\u00edda ao departamento de guarda onde recebe 'Habilidades especiais' o que lhe permite ver a 'Escala de amor' e os 'Cora\u00e7\u00f5es partidos' de todos os seres humanos.\n\nEli deve fazer que os humanos atribu\u00eddos a ela se sintam felizes. Junto com a ajuda do gato 'Blue' ela se aproxima de Hayun, um cara frio mas simp\u00e1tico. Ser\u00e1 que Eli ser\u00e1 capaz de curar o cora\u00e7\u00e3o ferido de Hayun?"
+                },
+                {
+                    "inline": false,
+                    "name": "G\u00eaneros",
+                    "value": "Fantasia, Romance"
+                }
+            ],
+            "color": 12806537,
+            "type": "rich"
+        }
+    ],
+    "746677424590159872": [
+        "Royal Chef",
+        {
+            "image": {
+                "url": "https://mangadex.org/images/manga/52297.jpeg?1596361997"
+            },
+            "fields": [
+                {
+                    "inline": false,
+                    "name": "Young Lady Is a Royal Chef",
+                    "value": "Como chef num pequeno restaurante de cavaleiros, tornei-me a filha mais nova de um homem poderoso, que tinha medo do imperador. Eu tentei fugir com todas as minhas despesas de viagem... Mas por que repentinamente, as pessoas est\u00e3o sendo t\u00e3o boas comigo? Por que voc\u00ea quer tirar os olhos de algu\u00e9m quando eles me v\u00eaem? Pessoas que me pegaram tentando escapar. Eu estou apenas cozinhando. O que h\u00e1 de errado com voc\u00eas?"
+                },
+                {
+                    "inline": false,
+                    "name": "G\u00eaneros",
+                    "value": "Drama, Fantasia, Gastronomia, Romance, Shoujo, Sobrenatural"
+                }
+            ],
+            "color": 12806537,
+            "type": "rich"
+        }
     ]
 }

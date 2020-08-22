@@ -1,3 +1,10 @@
+Angel:
+    Cleaning: Rin
+    Quality Check: Rin
+    Redraw: Gumi
+    Revisao: Rin
+    Traducao: nana
+    Typesetting: nana
 Bully:
     Cleaning: Rin
     Quality Check: Rin
@@ -61,6 +68,13 @@ Red Flowers:
     Revisao: Rin
     Traducao: Rin
     Typesetting: Rin
+Royal Chef:
+    Cleaning: '*SugarScan*'
+    Quality Check: '*SugarScan*'
+    Redraw: '*SugarScan*'
+    Revisao: Rin
+    Traducao: nana
+    Typesetting: '*SugarScan*'
 Sayonara:
     Cleaning: Rin
     Quality Check: Rin
