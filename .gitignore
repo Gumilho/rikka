@@ -2,6 +2,7 @@ venv/
 .idea/
 cogs/__pycache__/
 __pycache__/
+.vscode/
 
 jsons/private_projects.yaml
 jsons/public_projects.json
